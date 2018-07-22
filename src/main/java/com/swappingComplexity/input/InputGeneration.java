@@ -3,7 +3,6 @@ package com.swappingComplexity.input;
 import com.swappingComplexity.util.ServiceResponse;
 import com.swappingComplexity.util.ServiceResponseStatus;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -11,7 +10,6 @@ import java.util.List;
 import java.util.Random;
 
 @Service
-@Transactional
 public class InputGeneration {
 
     public ServiceResponse<List<Integer>> randomGeneration(Long number){

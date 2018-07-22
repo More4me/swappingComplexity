@@ -3,13 +3,12 @@ package com.swappingComplexity.algorithm;
 import com.swappingComplexity.util.ServiceResponse;
 import com.swappingComplexity.util.ServiceResponseStatus;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
+
 
 import java.util.Collections;
 import java.util.List;
 
 @Service
-@Transactional
 public class BubblesSort {
 
     public ServiceResponse<List<Integer>> sort(List<Integer> arr) {

@@ -7,7 +7,7 @@ public enum ServiceResponseStatus {
     private final String message;
     private final Integer code;
 
-    ServiceResponseStatus(String message, Integer code) {
+    private ServiceResponseStatus(String message, Integer code) {
         this.message = message;
         this.code = code;
     }
