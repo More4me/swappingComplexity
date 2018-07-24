@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Future;
 
 @RestController
@@ -38,9 +39,13 @@ public class RequestController {
 //    }
 
     @RequestMapping(value="/test",method = RequestMethod.GET)
-    public void testfunction(@RequestParam(required = true)Long size1,@RequestParam(required = true)Long size2){
-        Future<ServiceResponse<List<Integer>>> future = requestService.GenerateBubbleSortedArray(size1);
-        Future<ServiceResponse<List<Integer>>> future2= requestService.GenerateBubbleSortedArray(size2);
+    public Long testfunction(@RequestParam(required = true)Long size) {
+//        Future<ServiceResponse<List<Integer>>> future = requestService.GenerateBubbleSortedArray(size1);
+//        Future<ServiceResponse<List<Integer>>> future2= requestService.GenerateBubbleSortedArray(size2);
+
+            ServiceResponse<Long> toolong = requestService.submitRequest(size);
+
+            return toolong.getBody();
 
     }
 }
